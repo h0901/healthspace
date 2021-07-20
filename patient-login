@@ -1,0 +1,117 @@
+public class Patient_Login extends javax.swing.JFrame {
+
+    /**
+     * Creates new form Patient_Login
+     */
+    public static String n;
+    public static String u;
+    public static String p;
+    public static int pid;
+    public static int did;
+    
+    
+    
+    public Patient_Login(String pn,String username,String password,int p_id,int d_id) {
+        initComponents();
+        n=pn;
+        pl1.setText("Welcome " +n);
+         u=username;
+         p=password;
+         pid=p_id;
+         did=d_id;
+         //System.out.println(u);
+         //System.out.println(p);
+        
+    }
+private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here 
+         p_details pd=new p_details(u,p,n,pid,did);
+        pd.setVisible(true);
+        this.setVisible(false);
+        
+       
+    }                                        
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        book_appointment ba=new book_appointment(n,u,p,pid,did);
+        ba.setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+       p_viewAppointments pva=new p_viewAppointments(n,u,p,pid,did);
+        pva.setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        cancel_app ca=new cancel_app(u,p,n,pid,did);
+        ca.setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        view_doctors vd=new view_doctors(u,p,n,pid,did);
+        vd.setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        view_prescription vp=new view_prescription(u,p,n,pid,did);
+        vp.setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        show_report sr=new show_report(u,p,n,pid,did);
+        sr.setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        p_healthStatus ph=new p_healthStatus(u,p,n,pid,did);
+        ph.setVisible(true);
+        this.setVisible(false);
+    }                                        
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Patient_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Patient_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Patient_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Patient_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Patient_Login(n,u,p,pid,did).setVisible(true);
+            }
+        });
+    }
